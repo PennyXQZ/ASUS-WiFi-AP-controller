@@ -67,7 +67,7 @@ class AsusRouterController:
 
 
     def turn_LED(self, state):
-        router_controller.disconnect_router()
+        router_controller.connect_router()
         try:
             if hasattr(AsusLED,state.upper()):
                 self.loop.run_until_complete(self.router.async_set_state(getattr(AsusLED,state.upper())))
